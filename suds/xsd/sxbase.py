@@ -491,7 +491,8 @@ class SchemaObject(object):
     
     def __len__(self):
         n = 0
-        for x in self: n += 1
+        for x in self:
+            n += 1
         return n
     
     def __iter__(self):
@@ -577,6 +578,9 @@ class Iter:
             raise StopIteration()
     
     def next(self):
+        return self.__next__(self)
+
+    def __next__(self, arg=None):
         """
         Get the next item.
         @return: A tuple: the next (child, ancestry).
