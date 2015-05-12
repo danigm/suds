@@ -55,7 +55,7 @@ class Document(Element):
         return ''.join(s)
 
     def __str__(self):
-        return unicode(self).encode('utf-8')
+        return self.__unicode__()
     
     def __unicode__(self):
         return self.str()

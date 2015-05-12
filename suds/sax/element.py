@@ -752,7 +752,7 @@ class Element:
         result = []
         result.append('%s<%s' % (tab, self.qname()))
         result.append(self.nsdeclarations())
-        for a in [unicode(a) for a in self.attributes]:
+        for a in [str(a) for a in self.attributes]:
             result.append(' %s' % a)
         if self.isempty():
             result.append('/>')
@@ -943,7 +943,7 @@ class Element:
             'Element (prefix=%s, name=%s)' % (self.prefix, self.name)
     
     def __str__(self):
-        return unicode(self).encode('utf-8')
+        return self.__unicode__()
     
     def __unicode__(self):
         return self.str()
