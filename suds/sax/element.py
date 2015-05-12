@@ -778,7 +778,7 @@ class Element:
         result = []
         result.append('<%s' % self.qname())
         result.append(self.nsdeclarations())
-        for a in [unicode(a) for a in self.attributes]:
+        for a in [str(a) for a in self.attributes]:
             result.append(' %s' % a)
         if self.isempty():
             result.append('/>')

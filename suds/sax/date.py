@@ -314,7 +314,7 @@ class DateTime(Date,Time):
             log.warn('"%s" caused overflow, not-adjusted', self.datetime)
 
     def __str__(self):
-        return unicode(self)
+        return self.__unicode__()
     
     def __unicode__(self):
         s = []
